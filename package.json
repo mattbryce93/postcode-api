@@ -1,0 +1,61 @@
+{
+  "name": "postcode-api",
+  "version": "0.0.0",
+  "description": "An attempt at a Postcode API",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "lint": "lint-staged"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mattbryce93/postcode-api.git"
+  },
+  "author": "Matthew Bryce",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mattbryce93/postcode-api/issues"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && npm test"
+    }
+  },
+  "lint-staged": {
+    "*.{js,json,md}": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "jest": {
+    "collectCoverage": true,
+    "coverageDirectory": "./coverage",
+    "coverageThreshold": {
+      "global": {
+        "branches": 80,
+        "functions": 80,
+        "lines": 80,
+        "statements": -10
+      }
+    }
+  },
+  "homepage": "https://github.com/mattbryce93/postcode-api#readme",
+  "devDependencies": {
+    "aws-sdk": "^2.432.0",
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-json": "^1.4.0",
+    "eslint-plugin-markdown": "^1.0.0",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "husky": "^1.3.1",
+    "jest": "^24.5.0",
+    "lint-staged": "^8.1.5",
+    "prettier": "^1.16.4"
+  },
+  "dependencies": {}
+}
