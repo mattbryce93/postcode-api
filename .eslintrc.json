@@ -5,7 +5,8 @@
     "jest": true
   },
   "plugins": [
-    "markdown"
+    "markdown",
+    "json"
   ],
   "extends": ["standard", "plugin:prettier/recommended"],
   "globals": {

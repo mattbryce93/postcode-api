@@ -22,7 +22,7 @@
     }
   },
   "lint-staged": {
-    "*.{js,md}": [
+    "*.{js,json,md}": [
       "eslint --fix",
       "git add"
     ]
@@ -57,7 +57,5 @@
     "lint-staged": "^8.1.5",
     "prettier": "^1.16.4"
   },
-  "dependencies": {
-    "babel-eslint": "^10.0.1"
-  }
+  "dependencies": {}
 }
