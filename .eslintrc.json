@@ -4,6 +4,9 @@
     "node": true,
     "jest": true
   },
+  "plugins": [
+    "markdown"
+  ],
   "extends": ["standard", "plugin:prettier/recommended"],
   "globals": {
     "Atomics": "readonly",
