@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "lint": "lint-staged"
+    "lint": "lint-staged",
+    "compile": "tsc",
+    "tslint-check": "tslint-config-prettier-check ./tslint.json"
   },
   "repository": {
     "type": "git",
@@ -18,29 +20,24 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint && npm test"
+      "pre-commit": "npm run lint"
     }
   },
   "lint-staged": {
-    "*.{js,json,md}": [
-      "eslint --fix",
-      "git add"
+    "linters": {
+      "*.{js,ts,spec.ts}": [
+        "tslint --fix",
+        "jest",
+        "git add"
+      ]
+    },
+    "ignore": [
+      "package-lock.json"
     ]
-  },
-  "jest": {
-    "collectCoverage": true,
-    "coverageDirectory": "./coverage",
-    "coverageThreshold": {
-      "global": {
-        "branches": 80,
-        "functions": 80,
-        "lines": 80,
-        "statements": -10
-      }
-    }
   },
   "homepage": "https://github.com/mattbryce93/postcode-api#readme",
   "devDependencies": {
+    "@types/jest": "^24.0.11",
     "aws-sdk": "^2.432.0",
     "eslint": "^5.16.0",
     "eslint-config-prettier": "^4.1.0",
@@ -55,7 +52,14 @@
     "husky": "^1.3.1",
     "jest": "^24.5.0",
     "lint-staged": "^8.1.5",
-    "prettier": "^1.16.4"
+    "prettier": "^1.16.4",
+    "ts-jest": "^24.0.1",
+    "tslint": "^5.15.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-eslint-rules": "^5.4.0",
+    "typescript": "^3.4.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "express": "^4.16.4"
+  }
 }
